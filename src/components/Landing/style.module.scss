@@ -2,7 +2,10 @@
   position: relative;
   display: flex;
   height: 100vh;
+  width: 100vw;
+  background-color: #141516;
   overflow: hidden;
+  z-index: 1;
 
   img {
     object-fit: cover;
@@ -53,6 +56,25 @@
     svg {
       transform: scale(2);
       margin-bottom: 100px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .landing {
+    .sliderContainer {
+      top: calc(100vh - 250px);
+    }
+    .slider p {
+      font-size: 120px;
+    }
+    .description {
+      left: 10%;
+      top: 50%;
+      font-size: 18px;
+      svg {
+        margin-bottom: 40px;
+      }
     }
   }
 }

@@ -1,5 +1,11 @@
+:root {
+  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --font-geist-mono: "Courier New", Courier, monospace;
+}
+
 body {
   margin: 0px;
-  overflow: hidden; /* Hide scrollbars */
-  cursor: wait;
+  font-family: var(--font-geist-sans);
+  background-color: #141516;
+  color: white;
 }

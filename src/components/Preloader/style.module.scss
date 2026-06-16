@@ -1,42 +1,42 @@
 .introduction {
-    position: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99; // High index keeps it on top initially
+  background-color: #141516; // The dark screen panel color
+  overflow: hidden;
+
+  svg {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;   // ✅ 100% avoids scrollbar overflow
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    path {
+      fill: #141516;
+    }
+  }
+
+  p {
     display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 99;
-    background-color: #141516;
-    overflow: hidden; // ✅ hide any accidental overflow
+    color: white;
+    font-size: 42px;
+    position: absolute;
+    z-index: 1;
 
-    svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; // remove extra 300px
-        path {
-            fill: #141516;
-        }
+    span {
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+      margin-right: 10px;
     }
-
-    p {
-        display: flex;
-        align-items: center;
-        color: white;
-        font-size: 42px;
-        position: absolute;
-        z-index: 1;
-
-        span {
-            display: block;
-            width: 10px;
-            height: 10px;
-            background-color: white;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-    }
+  }
 }

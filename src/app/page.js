@@ -1,27 +1,41 @@
 "use client";
-import styles from "./page.module.css";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "@/components/Preloader";
+import Header from "@/components/Header";
 import Home from "@/components/Landing";
+import Description from "@/components/Description";
+import Projects from "@/components/Projects";
+import SlidingImages from "@/components/SlidingImages";
+import Contact from "@/components/Contact";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Keep the preloader visible for slightly longer than the word loop
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2300); // 1000ms (first word) + (150ms * 7 words) + extra buffer = ~2.3 seconds
+    }, 2300);
 
     return () => clearTimeout(timer);
   }, []);
+
   return (
-    <main className={styles.main}>
+    <>
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
+      <Header />
       <Home />
-    </main>
+      <Description />
+      <Projects />
+      <SlidingImages />
+      <Contact />
+    </>
   );
 }

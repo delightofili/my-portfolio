@@ -1,9 +1,7 @@
-/* eslint-disable react-hooks/immutability */
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import Image from "next/image";
 import styles from "./style.module.scss";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { slideUp } from "./animation";
@@ -18,8 +16,10 @@ export default function Home() {
   const xPercent = useRef(0);
   const direction = useRef(-1);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    let animationFrameId = null;
 
     // This loop animates your scrolling text marquee safely
     const animate = () => {
@@ -48,7 +48,7 @@ export default function Home() {
       x: "-500px",
     });
 
-    let animationFrameId = requestAnimationFrame(animate);
+    animationFrameId = requestAnimationFrame(animate);
 
     // Cleanup function: Stops the loop if the user navigates away
     return () => cancelAnimationFrame(animationFrameId);
