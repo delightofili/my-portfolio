@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --font-geist-sans: Arial, Helvetica, sans-serif;
   --font-geist-mono: "Courier New", Courier, monospace;
 }
@@ -8,4 +8,32 @@ body {
   font-family: var(--font-geist-sans);
   background-color: #141516;
   color: white;
+}
+ */
+
+:root {
+  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --font-geist-mono: "Courier New", Courier, monospace;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #141516;
+  color: white;
+  font-family: var(--font-geist-sans);
+
+  /* ↕️ ALLOW vertical scrolling down the portfolio */
+  overflow-y: auto;
+
+  /* ↔️ BLOCK horizontal shifting/shaking completely */
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

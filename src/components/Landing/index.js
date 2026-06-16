@@ -62,7 +62,7 @@ export default function Home() {
       className={styles.landing}
     >
       <Image
-        src="/images/background.jpg"
+        src="/images/background.png"
         fill={true}
         priority
         sizes="100vw"
